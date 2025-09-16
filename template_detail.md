@@ -1,14 +1,8 @@
 # Automotive CameraApp Flow - Detail Template
 **@author: toantv24**
 
-Comprehensive sequence diagram template for automotive camera applications, covering the complete lifecycle from initialization to shutdown. This template includes Android Camera2 API integration with automotive-specific components like VehicleHAL for safety-critical scenarios.
-
-**Key Features:**
-- Complete Camera2 API workflow
-- VehicleHAL integration for gear-dependent camera switching
-- HIDL/AIDL service interactions
-- Error handling and recovery mechanisms
-- Resource management for embedded systems
+Detail-level sequence diagram for CameraApp. 
+Pre-define for using in quick debug from logcat
 
 ```mermaid
 sequenceDiagram
@@ -152,51 +146,3 @@ sequenceDiagram
     CameraApp->>DisplayService: Release Surfaces
     CameraApp->>CameraApp: onDestroy()
 ```
-
-## Critical Checkpoints
-
-### Initialization Phase
-1. Service binding success
-2. HAL connection established  
-3. Vehicle integration active
-4. Camera enumeration complete
-
-### Camera Operation Phase  
-1. Camera device opened successfully
-2. Stream configuration completed
-3. Preview requests processing
-4. Frame delivery active
-
-### Resource Management
-1. Proper error handling active
-2. Vehicle event responses
-3. Clean shutdown sequence
-4. Resource release verified
-
-## Automotive-Specific Considerations
-
-### Safety & Performance
-- **Boot-time optimization**: Camera should be ready within 2-3 seconds
-- **Memory constraints**: Embedded systems require careful buffer management
-- **Real-time requirements**: Frame processing must maintain 30fps minimum
-
-### Vehicle Integration
-- **Gear-dependent logic**: Reverse camera activation on gear change
-- **Power management**: Handle suspend/resume cycles gracefully
-- **Multi-display support**: Different cameras for different screen zones
-
-### HIDL/AIDL Integration
-```java
-// Example HIDL camera service binding
-ICameraProvider cameraProvider = ICameraProvider.getService();
-// AIDL vehicle service connection
-IVehicle vehicleService = IVehicle.Stub.asInterface(
-    ServiceManager.getService("vehicle"));
-```
-
-### Testing Checkpoints
-- [ ] Camera enumeration under 500ms
-- [ ] Stream configuration under 1000ms
-- [ ] First frame delivery under 2000ms
-- [ ] Gear change response under 200ms
-- [ ] Clean shutdown under 1000ms
