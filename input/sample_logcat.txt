@@ -1,0 +1,98 @@
+09-17 10:30:15.123 I ActivityManager: Starting activity com.android.camera/.CameraActivity
+09-17 10:30:15.124 D CameraService: Camera service starting
+09-17 10:30:15.125 I CameraService: Binding to camera service
+09-17 10:30:15.126 D CameraHAL: Camera HAL initializing
+09-17 10:30:15.127 I CameraHAL: Hardware camera module ready
+09-17 10:30:15.128 D VehicleHAL: Vehicle service connected
+09-17 10:30:15.129 I VehicleHAL: Current gear position: PARK
+09-17 10:30:15.130 D CameraService: Camera enumeration complete
+09-17 10:30:15.131 I CameraService: Found 3 camera devices
+09-17 10:30:15.132 D CameraService: Camera characteristics loaded
+09-17 10:30:15.133 I DisplayService: Display surface created
+09-17 10:30:15.134 D CameraActivity: onCreate() called
+09-17 10:30:15.135 I CameraActivity: Activity created successfully
+09-17 10:30:15.136 D CameraActivity: onStart() called
+09-17 10:30:15.137 I CameraActivity: Activity started
+09-17 10:30:15.138 D CameraActivity: bindService() called
+09-17 10:30:15.139 I CameraService: Service bound successfully
+09-17 10:30:15.140 D CameraActivity: onResume() called
+09-17 10:30:15.141 I CameraActivity: Activity resumed
+09-17 10:30:15.142 D CameraService: camCompleteNotify() received
+09-17 10:30:15.143 I UseCaseManager: Processing complete notification
+09-17 10:30:15.144 D CamExternalhandler: Forwarding notification
+09-17 10:30:15.145 I CamQuickDrawRepository: Sending notification
+09-17 10:30:15.146 D QuickDraw: Camera display ready
+09-17 10:30:15.147 I CameraService: Opening camera device 0
+09-17 10:30:15.148 D CameraHAL: camera_device_open() called
+09-17 10:30:15.149 I CameraHAL: Power on camera module
+09-17 10:30:15.150 D CameraHAL: Camera module initialized
+09-17 10:30:15.151 I CameraService: Camera device opened successfully
+09-17 10:30:15.152 D CameraService: Creating capture session
+09-17 10:30:15.153 I CameraService: configureStreams() called
+09-17 10:30:15.154 D CameraHAL: configure_streams() called
+09-17 10:30:15.155 I CameraHAL: Setup pipeline
+09-17 10:30:15.156 D CameraHAL: Pipeline ready
+09-17 10:30:15.157 I CameraService: Streams configured
+09-17 10:30:15.158 D CameraService: Session configured
+09-17 10:30:15.159 I CameraActivity: onConfigured() callback received
+09-17 10:30:15.160 D CameraService: setRepeatingRequest() called
+09-17 10:30:15.161 I CameraService: submitRequest() called
+09-17 10:30:15.162 D CameraService: processCaptureRequest() called
+09-17 10:30:15.163 I CameraHAL: process_capture_request() called
+09-17 10:30:15.164 D CameraHAL: Start frame capture
+09-17 10:30:15.165 I CameraHAL: Raw frame data received
+09-17 10:30:15.166 D CameraHAL: Process frame
+09-17 10:30:15.167 I CameraHAL: Processed frame ready
+09-17 10:30:15.168 D CameraService: Frame result received
+09-17 10:30:15.169 I CameraService: Capture result processed
+09-17 10:30:15.170 D CameraActivity: onCaptureCompleted() called
+09-17 10:30:15.171 I DisplayService: Update surface
+09-17 10:30:15.172 D DisplayService: Frame displayed to user
+09-17 10:30:15.173 I VehicleHAL: Gear change event detected
+09-17 10:30:15.174 D VehicleHAL: Gear position changed to REVERSE
+09-17 10:30:15.175 I CameraApp: Adapt camera config for reverse
+09-17 10:30:15.176 D DisplayService: Update display mode for reverse
+09-17 10:30:15.177 I CameraService: Camera configuration updated
+09-17 10:30:15.178 D CameraHAL: Hardware error detected
+09-17 10:30:15.179 E CameraHAL: Device error occurred
+09-17 10:30:15.180 W CameraService: Error callback received
+09-17 10:30:15.181 I CameraService: Error notification sent
+09-17 10:30:15.182 D CameraActivity: onError() callback received
+09-17 10:30:15.183 I CameraActivity: Handle error recovery
+09-17 10:30:15.184 D CameraService: Error recovery initiated
+09-17 10:30:15.185 I CameraHAL: Hardware reinitialized
+09-17 10:30:15.186 D CameraService: Error recovery completed
+09-17 10:30:15.187 I CameraActivity: Take picture requested
+09-17 10:30:15.188 D CameraService: capture() called
+09-17 10:30:15.189 I CameraService: submitCaptureRequest() called
+09-17 10:30:15.190 D CameraService: processCaptureRequest() called
+09-17 10:30:15.191 I CameraHAL: process_capture_request() called
+09-17 10:30:15.192 D CameraHAL: Single frame capture
+09-17 10:30:15.193 I CameraHAL: Full resolution frame captured
+09-17 10:30:15.194 D CameraService: Capture complete
+09-17 10:30:15.195 I CameraService: Image available
+09-17 10:30:15.196 D CameraActivity: onImageAvailable() called
+09-17 10:30:15.197 I CameraActivity: Image captured successfully
+09-17 10:30:15.198 D VehicleHAL: Gear position changed to DRIVE
+09-17 10:30:15.199 I CameraApp: Exit application requested
+09-17 10:30:15.200 D CameraService: stopRepeating() called
+09-17 10:30:15.201 I CameraService: abortCaptures() called
+09-17 10:30:15.202 D CameraService: stopRepeating() called
+09-17 10:30:15.203 I CameraActivity: close() called
+09-17 10:30:15.204 D CameraService: disconnect() called
+09-17 10:30:15.205 I CameraService: closeDevice() called
+09-17 10:30:15.206 D CameraHAL: camera_device_close() called
+09-17 10:30:15.207 I CameraHAL: Power down camera
+09-17 10:30:15.208 D CameraHAL: Shutdown complete
+09-17 10:30:15.209 I CameraActivity: unbindService() called
+09-17 10:30:15.210 D VehicleHAL: Unregister listeners
+09-17 10:30:15.211 I DisplayService: Release surfaces
+09-17 10:30:15.212 D CameraActivity: onPause() called
+09-17 10:30:15.213 I CameraActivity: Activity paused
+09-17 10:30:15.214 D CameraActivity: onStop() called
+09-17 10:30:15.215 I CameraActivity: Activity stopped
+09-17 10:30:15.216 D CameraService: camDeletionComplete() via AIDL
+09-17 10:30:15.217 I CameraService: Deletion complete notification
+09-17 10:30:15.218 D CameraActivity: unbindService() called
+09-17 10:30:15.219 I CameraActivity: onDestroy() called
+09-17 10:30:15.220 D CameraActivity: Activity destroyed

@@ -1,0 +1,99 @@
+{
+  "debug": false,
+  "max_file_size": 2147483648,
+  "chunk_size": 1048576,
+  "supported_encodings": ["utf-8", "ascii", "latin-1"],
+  "supported_extensions": [".txt", ".log", ".logcat"],
+  "template_file": "template_sequence/templates.json",
+  "temp_results_dir": "temp_results",
+  "max_results": 10000,
+  "log_pattern": "^\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3}\\s+(\\w+)\\s+(\\w+):\\s*(.*)$",
+  "max_events_per_diagram": 1000,
+  "overview_event_limit": 20,
+  "output_seq_dir": "output_seq",
+  "output_testEvd_dir": "output_testEvd",
+  "pretty_print": true,
+  "include_metadata": true,
+  "compliance_mode": false,
+  "retention_period": 7,
+  "custom_fields": {
+    "Test Environment": "Automotive IVI System",
+    "Test Coverage": "Camera Service Integration",
+    "Test Duration": "2 hours"
+  },
+  "performance_requirements": {
+    "log_processing_speed": 10000,
+    "pattern_matching_rate": 5000,
+    "memory_efficiency_multiplier": 2,
+    "export_time_limit": 2,
+    "parse_success_rate": 95,
+    "template_match_rate": 80,
+    "sequence_accuracy": 99,
+    "error_recovery_rate": 99,
+    "data_integrity": 100,
+    "availability": 99.9,
+    "concurrent_users": 10
+  },
+  "automotive_specific": {
+    "boot_time_optimization": 3,
+    "frame_processing_fps": 30,
+    "gear_change_response_time": 0.2,
+    "camera_enumeration_time": 0.5,
+    "stream_configuration_time": 1.0,
+    "first_frame_delivery_time": 2.0,
+    "clean_shutdown_time": 1.0,
+    "temperature_range": {
+      "min": -40,
+      "max": 85
+    },
+    "iso_26262_compliance": {
+      "asil_rating": "ASIL-B",
+      "fail_safe_behavior": true,
+      "redundancy": true,
+      "monitoring": true
+    }
+  },
+  "security_considerations": {
+    "access_control": {
+      "file_access": "OS permissions",
+      "template_modification": "admin only",
+      "pattern_updates": "elevated privileges",
+      "evidence_reports": "sensitive data handling"
+    },
+    "data_protection": {
+      "log_sanitization": true,
+      "encryption_support": true,
+      "audit_trail": true,
+      "retention_cleanup": true
+    },
+    "compliance": {
+      "gdpr": true,
+      "iso_26262": true,
+      "soc_2": true,
+      "hipaa": false
+    }
+  },
+  "testing_guidelines": {
+    "unit_testing": {
+      "camera_info_serialization": true,
+      "service_binding_cycles": true,
+      "activity_lifecycle_transitions": true,
+      "aidl_interface_calls": true,
+      "error_handling_recovery": true
+    },
+    "integration_testing": {
+      "end_to_end_flow": true,
+      "multi_activity_scenarios": true,
+      "service_crash_recovery": true,
+      "memory_leak_detection": true,
+      "performance_benchmarking": true
+    },
+    "automotive_validation": {
+      "temperature_range_testing": true,
+      "vibration_resistance": true,
+      "power_cycle_resilience": true,
+      "can_bus_signal_integrity": true,
+      "electromagnetic_compatibility": true
+    }
+  }
+}

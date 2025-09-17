@@ -1,0 +1,169 @@
+{
+  "templates": [
+    {
+      "name": "Camera Service Start",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*CameraService.*start.*)",
+      "sequence_mapping": {
+        "from": "System",
+        "to": "CameraService",
+        "message": "Service Start"
+      },
+      "priority": 1,
+      "description": "Camera service initialization"
+    },
+    {
+      "name": "Camera Activity Launch",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*ActivityManager.*Starting.*Camera.*)",
+      "sequence_mapping": {
+        "from": "ActivityManager",
+        "to": "CameraActivity",
+        "message": "Start Activity"
+      },
+      "priority": 2,
+      "description": "Camera activity launch"
+    },
+    {
+      "name": "Camera HAL Connection",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*CameraHAL.*connect.*)",
+      "sequence_mapping": {
+        "from": "CameraService",
+        "to": "CameraHAL",
+        "message": "HAL Connection"
+      },
+      "priority": 3,
+      "description": "Camera HAL connection"
+    },
+    {
+      "name": "Vehicle Gear Change",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*VehicleHAL.*gear.*change.*)",
+      "sequence_mapping": {
+        "from": "VehicleHAL",
+        "to": "CameraApp",
+        "message": "Gear Change Event"
+      },
+      "priority": 4,
+      "description": "Vehicle gear change event"
+    },
+    {
+      "name": "Camera Error",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*Camera.*error.*)",
+      "sequence_mapping": {
+        "from": "CameraHAL",
+        "to": "CameraService",
+        "message": "Error Notification"
+      },
+      "priority": 5,
+      "description": "Camera error handling"
+    },
+    {
+      "name": "Camera Stream Start",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*stream.*start.*)",
+      "sequence_mapping": {
+        "from": "CameraService",
+        "to": "CameraHAL",
+        "message": "Start Stream"
+      },
+      "priority": 6,
+      "description": "Camera stream initialization"
+    },
+    {
+      "name": "Camera Stream Stop",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*stream.*stop.*)",
+      "sequence_mapping": {
+        "from": "CameraService",
+        "to": "CameraHAL",
+        "message": "Stop Stream"
+      },
+      "priority": 7,
+      "description": "Camera stream termination"
+    },
+    {
+      "name": "Display Service Update",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*DisplayService.*update.*)",
+      "sequence_mapping": {
+        "from": "CameraApp",
+        "to": "DisplayService",
+        "message": "Update Display"
+      },
+      "priority": 8,
+      "description": "Display service update"
+    },
+    {
+      "name": "Camera Capture Request",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*capture.*request.*)",
+      "sequence_mapping": {
+        "from": "CameraApp",
+        "to": "CameraService",
+        "message": "Capture Request"
+      },
+      "priority": 9,
+      "description": "Camera capture request"
+    },
+    {
+      "name": "Camera Capture Complete",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*capture.*complete.*)",
+      "sequence_mapping": {
+        "from": "CameraService",
+        "to": "CameraApp",
+        "message": "Capture Complete"
+      },
+      "priority": 10,
+      "description": "Camera capture completion"
+    },
+    {
+      "name": "Service Binding",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*bind.*service.*)",
+      "sequence_mapping": {
+        "from": "CameraActivity",
+        "to": "CameraService",
+        "message": "Bind Service"
+      },
+      "priority": 11,
+      "description": "Service binding operation"
+    },
+    {
+      "name": "Service Unbinding",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*unbind.*service.*)",
+      "sequence_mapping": {
+        "from": "CameraActivity",
+        "to": "CameraService",
+        "message": "Unbind Service"
+      },
+      "priority": 12,
+      "description": "Service unbinding operation"
+    },
+    {
+      "name": "Activity Lifecycle",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*on(?:Create|Start|Resume|Pause|Stop|Destroy).*)",
+      "sequence_mapping": {
+        "from": "System",
+        "to": "CameraActivity",
+        "message": "{group4}"
+      },
+      "priority": 13,
+      "description": "Activity lifecycle events"
+    },
+    {
+      "name": "Permission Request",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*permission.*request.*)",
+      "sequence_mapping": {
+        "from": "CameraApp",
+        "to": "System",
+        "message": "Permission Request"
+      },
+      "priority": 14,
+      "description": "Permission request handling"
+    },
+    {
+      "name": "Hardware Initialization",
+      "pattern": "(\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(\\w+)\\s+(\\w+):\\s*(.*hardware.*init.*)",
+      "sequence_mapping": {
+        "from": "CameraHAL",
+        "to": "Hardware",
+        "message": "Hardware Init"
+      },
+      "priority": 15,
+      "description": "Hardware initialization"
+    }
+  ]
+}

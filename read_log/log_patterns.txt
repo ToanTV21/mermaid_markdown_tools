@@ -1,0 +1,71 @@
+# Log Pattern Configuration File
+# This file contains regex patterns for different log formats
+
+# Default Android Logcat Pattern
+# Format: MM-DD HH:MM:SS.mmm LEVEL TAG: Message
+# Example: 09-17 10:30:15.123 I ActivityManager: Starting activity
+DEFAULT_ANDROID_LOGCAT=^(\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+(\w+)\s+(\w+):\s*(.*)$
+
+# Alternative Android Logcat Pattern (with year)
+# Format: YYYY-MM-DD HH:MM:SS.mmm LEVEL TAG: Message
+# Example: 2024-09-17 10:30:15.123 I ActivityManager: Starting activity
+ANDROID_LOGCAT_WITH_YEAR=^(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+(\w+)\s+(\w+):\s*(.*)$
+
+# Standard Syslog Pattern
+# Format: MMM DD HH:MM:SS HOSTNAME TAG: Message
+# Example: Sep 17 10:30:15 localhost CameraService: Service started
+SYSLOG=^(\w{3}\s+\d{1,2}\s+\d{2}:\d{2}:\d{2})\s+(\w+)\s+(\w+):\s*(.*)$
+
+# Custom Application Log Pattern
+# Format: [YYYY-MM-DD HH:MM:SS] LEVEL TAG: Message
+# Example: [2024-09-17 10:30:15] INFO CameraService: Service started
+CUSTOM_APP_LOG=^\[(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})\]\s+(\w+)\s+(\w+):\s*(.*)$
+
+# ISO 8601 Timestamp Pattern
+# Format: YYYY-MM-DDTHH:MM:SS.mmmZ LEVEL TAG: Message
+# Example: 2024-09-17T10:30:15.123Z INFO CameraService: Service started
+ISO_8601=^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)\s+(\w+)\s+(\w+):\s*(.*)$
+
+# Simple Timestamp Pattern
+# Format: HH:MM:SS LEVEL TAG: Message
+# Example: 10:30:15 INFO CameraService: Service started
+SIMPLE_TIME=^(\d{2}:\d{2}:\d{2})\s+(\w+)\s+(\w+):\s*(.*)$
+
+# Automotive Specific Pattern
+# Format: [ECU_ID] MM-DD HH:MM:SS.mmm LEVEL TAG: Message
+# Example: [BCM] 09-17 10:30:15.123 I CameraService: Service started
+AUTOMOTIVE_ECU=^\[(\w+)\]\s+(\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+(\w+)\s+(\w+):\s*(.*)$
+
+# Multi-line Log Pattern (for logs that span multiple lines)
+# This pattern captures the first line and treats subsequent lines as continuation
+MULTILINE_LOG=^(\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+(\w+)\s+(\w+):\s*(.*)$
+
+# JSON Log Pattern
+# Format: {"timestamp": "YYYY-MM-DD HH:MM:SS", "level": "LEVEL", "tag": "TAG", "message": "MESSAGE"}
+# Example: {"timestamp": "2024-09-17 10:30:15", "level": "INFO", "tag": "CameraService", "message": "Service started"}
+JSON_LOG=^\{"timestamp":\s*"([^"]+)",\s*"level":\s*"([^"]+)",\s*"tag":\s*"([^"]+)",\s*"message":\s*"([^"]+)"\}$
+
+# CSV Log Pattern
+# Format: timestamp,level,tag,message
+# Example: 2024-09-17 10:30:15,INFO,CameraService,Service started
+CSV_LOG=^([^,]+),([^,]+),([^,]+),(.*)$
+
+# Tab-separated Log Pattern
+# Format: timestamp\tlevel\ttag\tmessage
+# Example: 2024-09-17 10:30:15	INFO	CameraService	Service started
+TAB_SEPARATED=^([^\t]+)\t([^\t]+)\t([^\t]+)\t(.*)$
+
+# Custom Pattern for Automotive Camera System
+# Format: [TIMESTAMP] [ECU] [LEVEL] [TAG] MESSAGE
+# Example: [09-17 10:30:15.123] [BCM] [INFO] [CameraService] Service started
+AUTOMOTIVE_CAMERA=^\[(\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\]\s+\[(\w+)\]\s+\[(\w+)\]\s+\[(\w+)\]\s+(.*)$
+
+# Pattern for logs with thread information
+# Format: MM-DD HH:MM:SS.mmm LEVEL TAG (thread_id): Message
+# Example: 09-17 10:30:15.123 I CameraService (12345): Service started
+THREAD_INFO=^(\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+(\w+)\s+(\w+)\s+\((\d+)\):\s*(.*)$
+
+# Pattern for logs with process information
+# Format: MM-DD HH:MM:SS.mmm LEVEL TAG (pid): Message
+# Example: 09-17 10:30:15.123 I CameraService (1234): Service started
+PROCESS_INFO=^(\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+(\w+)\s+(\w+)\s+\((\d+)\):\s*(.*)$
