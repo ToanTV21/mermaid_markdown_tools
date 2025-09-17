@@ -1,0 +1,1 @@
+-from searched_temp.txt in read_log module, this module compare with template_sequence diagram in template_sequence and calls to export_sequence to write into mermaid format markdown file

@@ -1,0 +1,2 @@
+-store logcat_main.txt which user wants to analyze
+-store request_configure_file.txt -> configure output type, which sequence user wants to analyze 

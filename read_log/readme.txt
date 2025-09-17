@@ -1,0 +1,3 @@
+-This module will read logcat file and find log as regex module_name:method_name.
+-allow admin define & change log pattern, template log for searching
+-save all searched log into searched_temp.txt

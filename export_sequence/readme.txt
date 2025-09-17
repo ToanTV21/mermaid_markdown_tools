@@ -1,0 +1,2 @@
+-quick_compare module calls this module to export compared results into mermaid format markdown file.
+-export into 2 files overview_seq.md and detail_seq.md
